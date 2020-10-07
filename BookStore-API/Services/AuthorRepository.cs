@@ -37,7 +37,9 @@ namespace BookStore_API.Services
 
         public async Task<Author> FindById(int id)
         {
-            var author = await _db.Authors.FindAsync(id);
+            var author = await _db.Authors
+                .Include(q => q.Books)
+                .FirstOrDefaultAsync(Queryable => Queryable.Id == id);
             return author;
         }
 

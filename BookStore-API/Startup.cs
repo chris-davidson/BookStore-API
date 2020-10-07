@@ -68,10 +68,10 @@ namespace BookStore_API
                 });
 
             services.AddSwaggerGen(c => {
-                c.SwaggerDoc("v1", new OpenApiInfo 
-                { 
-                    Title = "Book Store API", 
-                    Version = "v1",  
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Book Store API",
+                    Version = "v1",
                     Description = "This is an educational API for a Book Store"
                 });
 
@@ -84,7 +84,9 @@ namespace BookStore_API
             services.AddScoped<IAuthorRepository, AuthorRepository>();
             services.AddScoped<IBookRepository, BookRepository>();
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(op => 
+                op.SerializerSettings.ReferenceLoopHandling = 
+                    Newtonsoft.Json.ReferenceLoopHandling.Ignore);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
