@@ -13,7 +13,7 @@ namespace BookStore_API.Data
             RoleManager<IdentityRole> roleManager)
         {
             await SeedRoles(roleManager);
-            SeedUsers(userManager);
+            await SeedUsers(userManager);
         }
         private async static Task SeedUsers(UserManager<IdentityUser> userManager)
         {
