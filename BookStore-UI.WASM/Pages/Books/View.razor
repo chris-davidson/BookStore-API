@@ -56,7 +56,7 @@ else
             </table>
         </div>
         <div class="col-4">
-            <img src="uploads/@Model.Image" style="height:300px;width:300px" />
+            <img src="@string.Format("data:image/png;base64,{0}", Model.File)" style="height:300px;width:300px" />
             <h3 class="text-center text-info">@string.Format("{0:C}", Model.Price)</h3>
         </div>
     </div>

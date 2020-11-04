@@ -18,6 +18,8 @@ namespace BookStore_API.DTOs
 
         public int? AuthorId { get; set; }
         public virtual AuthorDTO Author { get; set; }
+
+        public string File { get; set; }
     }
     public class BookCreateDTO
     {
@@ -33,6 +35,8 @@ namespace BookStore_API.DTOs
 
         [Required]
         public int? AuthorId { get; set; }
+
+        public string File { get; set; }
     }
 
     public class BookUpdateDTO
@@ -50,5 +54,7 @@ namespace BookStore_API.DTOs
 
         [Required] 
         public int? AuthorId { get; set; }
+
+        public string File { get; set; }
     }
 }
